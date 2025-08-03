@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "quantumKey": "your-secure-quantum-key",
+  "connections": [
+    {
+      "name": "VS Code AI",
+      "type": "http",
+      "endpoint": "http://localhost:3000/aegis-mcp",
+      "authentication": {
+        "type": "apiKey",
+        "credentials": {
+          "apiKey": "vscode-ai-access-key"
+        }
+      },
+      "capabilities": [
+        "codeCompletion",
+        "refactoring",
+        "documentation",
+        "debugging"
+      ],
+      "enabled": true
+    }
+  ],
+  "security": {
+    "requireEncryption": true,
+    "allowedOrigins": [
+      "http://localhost:*",
+      "vscode://*"
+    ],
+    "maxConnections": 5
+  }
+}

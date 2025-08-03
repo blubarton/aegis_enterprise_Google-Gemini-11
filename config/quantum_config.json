@@ -1,0 +1,18 @@
+{
+  "quantum_simulator": "statevector",
+  "default_entanglement": "bell",
+  "max_qubits": 12,
+  "optimization_level": 3,
+  "quantum_algorithms": {
+    "grover": {
+      "max_iterations": 100
+    },
+    "shor": {
+      "factorization_limit": 1000000
+    }
+  },
+  "visualization": {
+    "bloch_sphere": true,
+    "circuit_diagram": true
+  }
+}

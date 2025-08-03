@@ -1,0 +1,24 @@
+Updated Plan to Resolve Repository Problems and TS1110 Errors
+
+Summary:
+The TS1110 "Type expected" errors and related typing issues in the repository are primarily due to incomplete or inconsistent type declarations, missing required properties/methods in node classes, and possibly complex nested generic types causing parsing issues.
+
+Key Points:
+1. Review and unify all related type declarations and interfaces for completeness and consistency.
+2. Ensure all node classes fully implement the BaseNode interface, including the 'input' property and 'process' method with correct typing.
+3. Add any missing logic or type annotations that TypeScript expects to resolve parsing errors.
+4. Consider creating index files or central type exports to simplify imports and reduce errors.
+5. Perform a systematic refactor of all affected files guided by the design and the "To integrate yo.txt" logic.
+6. Simplify complex nested generic types where possible to avoid parsing issues.
+7. Test critical paths after refactoring to verify correctness and stability.
+
+Additional Notes:
+- The wrapper pattern using ContextEnvelope has been adopted to unify input/output types.
+- Some node classes (e.g., AndroidNode, IosNode, FileCreationNode) require adding 'input' and 'process' to fully implement BaseNode.
+- The TS1110 error on Promise generic syntax can be mitigated by avoiding explicit generic in new Promise constructor.
+- Consistent use of interfaces and types across the project will improve maintainability and reduce errors.
+- This plan serves as a reference for future refactoring and debugging sessions.
+
+This document can be used as a motto or guiding principle for ongoing and future development to maintain code quality and type safety.
+
+Please keep this plan handy for reference and share it when starting new tasks or chats related to this project.

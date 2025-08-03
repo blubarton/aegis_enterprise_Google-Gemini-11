@@ -1,0 +1,47 @@
+List of TypeScript files with errors and refactoring plan:
+
+1. nodes/ai/ai-base-node.ts
+   - Issue: Mismatch in nested ContextEnvelope types between BaseNode interface and AiBaseNode class.
+   - Question: Should we use a wrapper pattern to unify input/output envelopes? (Confirmed yes)
+   - Fix: Implement wrapper pattern, update AiBaseNode and related interfaces to use consistent nested ContextEnvelope types.
+
+2. nodes/ai/ml-node.ts
+   - Issue: TS errors related to typing and possibly missing imports.
+   - Fix: Refactor to use explicit typing, fix imports, ensure model management logic is robust.
+
+3. nodes/ai/nlp-node.ts
+   - Issue: Similar typing and import errors.
+   - Fix: Refactor for consistent typing and imports, align with wrapper pattern.
+
+4. nodes/browser/base-browser-node.ts
+   - Issue: TS1110 errors, likely due to syntax or typing issues.
+   - Fix: Review Puppeteer usage, add explicit types, fix syntax errors.
+
+5. types/custom-typings.d.ts
+   - Issue: TS1110 error due to syntax or type declaration issues.
+   - Fix: Correct syntax, ensure proper type declarations.
+
+6. nodes/languages/language-base-node.ts
+   - Issue: Typing and import errors.
+   - Fix: Refactor for consistent typing and imports.
+
+7. nodes/platform/windows-node.ts
+8. nodes/platform/macos-node.ts
+9. nodes/platform/linux-node.ts
+10. nodes/platform/ios-node.ts
+11. nodes/platform/android-node.ts
+    - Issue: Various TS errors.
+    - Fix: Review and refactor for typing consistency and logic improvements.
+
+12. interfaces/node-wrapper.ts
+    - Newly added wrapper interface.
+    - Ensure all node interfaces and classes use this consistently.
+
+Additional notes:
+- Some files have missing module errors (e.g., sqlite in sql-node.ts).
+- Need to install missing npm packages or adjust imports accordingly.
+- Review "To integrate yo.txt" and documentation files for design logic to guide refactoring.
+- After refactoring, perform critical-path testing on core modules and API endpoints.
+- Optionally perform thorough testing for full coverage.
+
+Please confirm if this plan is acceptable or if you want to prioritize specific files or issues.
